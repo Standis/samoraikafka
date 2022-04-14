@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>FranzKafka Validator</title>
+  <meta content="FranzKafka node web page" name="description">
+  <meta content="Oraichain, ORAI, AIRI, AI, Validator, Node" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo_bgless.png" rel="icon">
+  <link href="assets/img/logo_bgless.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=IBM Plex Sans Condensed" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo">
+        <a href="index.html">
+          <img src="assets/img/logo_bgless_white.png" alt="FranzKafka validator logo" class="img-fluid" style="max-height: 35px; margin-right: 15px;">
+          FranzKafka
+        </a>
+      </h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="dropdown"><a href="index.html"><span>Home</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="index.html#features">About</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto active" href="utilities.html">Utilities</a></li>          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Main screen Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+      <h1>Oraichain utilities</h1>
+      <h2>To make things easier</h2>
+    </div>
+  </section><!-- End Hero -->
+
+<!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <ul class="nav nav-tabs row d-flex">
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
+              <i class="bi bi-lightbulb"></i>
+              <h4 class="d-none d-lg-block">Rewards calculator</h4>
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Rewards calculator</h3>
+                <p>
+                  How much Orai will you get when staking on mainnet? Let's find out.
+                </p>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <label for="form_input">Amount of deposited Orai</label><input type="number" name="input" id="form_input" class="form-control" placeholder="Amount of deposited Orai" required="required" data-error="Deposited amount is required">
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <label for="form_input">For how many days</label><input type="number" name="input" id="form_input" class="form-control" placeholder="How long" required="required" data-error="This attribute is required">
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="Send Message">                
+                </div>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <p>Result: </p>
+                <p id="delegation_result"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Dewi</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- JS Files -->
+  <script type="text/javascript" src="assets/js/daysSince.js"></script>
+
+</body>
+
+</html>

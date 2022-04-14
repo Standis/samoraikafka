@@ -19,7 +19,7 @@ a {
 }
 
 a:hover {
-  color: #ff724a;
+  color: #341B55;
   text-decoration: none;
 }
 
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 0;
 }
 .back-to-top:hover {
-  background: #ff6a40;
+  background: #341B55;
   color: #fff;
 }
 .back-to-top.active {

@@ -24,6 +24,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -31,6 +32,10 @@
 
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -72,46 +77,65 @@
 <!-- ======= Features Section ======= -->
     <section id="features" class="features">
       <div class="container" data-aos="fade-up">
-
-        <ul class="nav nav-tabs row d-flex">
-          <li class="nav-item col-3">
-            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
-              <i class="bi bi-lightbulb"></i>
-              <h4 class="d-none d-lg-block">Rewards calculator</h4>
-            </a>
-          </li>
-        </ul>
-
+        <div class="col-lg-12">
+          <ul class="nav nav-tabs row d-flex">
+            <li class="nav-item col-3">
+              <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
+                <i class="bi bi-lightbulb"></i>
+                <h4 class="d-none d-lg-block">Rewards calculator</h4>
+              </a>
+            </li>
+          </ul>  
+        </div>
+        
         <div class="tab-content">
-          <div class="tab-pane active show" id="tab-1">
+          <div class="col-lg-12">
+            <h3>Rewards calculator</h3>
+            <p>
+              How much Orai will you annualy get when staking on mainnet? Let's find out.
+            </p>
+          </div>
+          <div class="col-lg-12">
             <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Rewards calculator</h3>
-                <p>
-                  How much Orai will you get when staking on mainnet? Let's find out.
-                </p>
-                <div class="col-lg-3">
+            <!-- INPUT PART-->
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="form_input">Amount of deposited Orai</label><input type="number" name="input" id="form_input" class="form-control" placeholder="Amount of deposited Orai" required="required" data-error="Deposited amount is required">
+                    <label for="form_input">Delegated amount</label><input type="number" name="input" id="apy_amount" class="form-control" required="required" data-error="Deposited amount is required" value="0">
                   </div>
+                </div>   
+
+                <!-- SLIDER-->             
+                <div class="col-lg-6">
+
+                  <form>
+                    <div class="form-group">
+                      <label for="formControlRange">Validators fee in %</label>
+                      <input type="range" class="form-control-range" id="formControlRange" min="0" max="10" step="1" oninput="$('#rangeval').html($(this).val()), apyCalculator()">
+                      <span id="rangeval">5</span>
+                    </div>
+                  </form>
+
+                </div>     
+
+
+
+                <div class="col-lg-12 m-t-10">
+                  <input onclick="apyCalculator()" class="btn btn-success btn-send pt-2 btn-block " value="Count APY">                
                 </div>
-                <div class="col-lg-3">
-                  <div class="form-group">
-                    <label for="form_input">For how many days</label><input type="number" name="input" id="form_input" class="form-control" placeholder="How long" required="required" data-error="This attribute is required">
-                  </div>
-                </div>
-                <div class="col-lg-3">
-                  <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="Send Message">                
-                </div>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <p>Result: </p>
-                <p id="delegation_result"></p>
-              </div>
+              </div>  
+            </div>
+
+            <!-- CHART PART-->
+            <div class="col-lg-6">
+              <canvas id="lineChart"></canvas>
+            </div>
+
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section><!-- End Features Section -->
 
@@ -147,7 +171,7 @@
   <script src="assets/js/main.js"></script>
 
   <!-- JS Files -->
-  <script type="text/javascript" src="assets/js/daysSince.js"></script>
+  <script type="text/javascript" src="assets/js/apyCalculator.js"></script>
 
 </body>
 

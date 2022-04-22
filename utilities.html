@@ -92,7 +92,7 @@
           <div class="col-lg-12">
             <h3>Rewards calculator</h3>
             <p>
-              How much Orai will you annualy get when staking on mainnet? Let's find out.
+              How much Orai will you annualy get when staking on mainnet? Let's find out. Current APR is 29%.
             </p>
           </div>
           <div class="col-lg-12">
@@ -112,15 +112,20 @@
                   <form>
                     <div class="form-group">
                       <label for="formControlRange">Validators fee in %</label>
-                      <input type="range" class="form-control-range" id="formControlRange" min="0" max="10" step="1" oninput="$('#rangeval').html($(this).val()), apyCalculator()">
+                      <input autocomplete="off" type="range" class="form-control-range" id="formControlRange" min="0" max="10" step="1" oninput="$('#rangeval').html($(this).val()), apyCalculator()">
                       <span id="rangeval">5</span>
                     </div>
                   </form>
 
                 </div>     
 
-
-
+                <!-- compounding -->
+                <div class="col-lg-12">
+                  <div class="form-group">
+                      <label for="compound">Compounding monthly</label>
+                      <input autocomplete="off" type="checkbox" id="compound" name="check" value="0" onclick="apyCalculator()">  
+                  </div>
+                </div>
                 <div class="col-lg-12 m-t-10">
                   <input onclick="apyCalculator()" class="btn btn-success btn-send pt-2 btn-block " value="Count APY">                
                 </div>
